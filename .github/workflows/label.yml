@@ -4,7 +4,8 @@ on:
   push:
 
 jobs:
-  inspect:
+
+  label:
     runs-on: ubuntu-latest
 
     steps:
