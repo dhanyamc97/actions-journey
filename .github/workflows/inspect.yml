@@ -1,0 +1,24 @@
+name: Inspect Runner
+
+on:
+  push:
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Print runner and repository details
+        run: |
+          echo "Runner kernel details:"
+          uname -a
+          echo "Repository file listing:"
+          ls -laR
+
+     - name: Count repository files
+       run: |
+         echo "Total number of files: "
+         find . -type f | wc -l
