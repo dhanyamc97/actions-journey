@@ -1,0 +1,15 @@
+name: context
+on: push
+jobs:
+  data:
+    runs-on: ubuntu-latest
+    steps:
+     - name: Check out repository
+       uses: actions/checkout@v4
+     - name: Decribr this run
+       run: |
+         echo "Repository: ${{ github.repository }}"
+         echo "Branch: ${{ github.ref_name }}"
+         echo "Commit: ${{ github.sha }}"
+         echo "Event: ${{ github.event_name }}"
+         echo "Runner's OS: ${{ runner.os }}"
