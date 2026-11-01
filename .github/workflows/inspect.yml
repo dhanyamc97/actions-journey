@@ -1,7 +1,7 @@
+
 name: Inspect Runner
 
-on:
-  push:
+on: push
 
 jobs:
   inspect:
@@ -18,7 +18,8 @@ jobs:
           echo "Repository file listing:"
           ls -laR
 
-     - name: Count repository files
-       run: |
-         echo "Total number of files: "
-         find . -type f | wc -l
+      - name: Count repository files
+        run: |
+          echo "Total number of files:"
+          find . -type f | wc -l
+
