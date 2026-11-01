@@ -4,5 +4,5 @@ jobs:
   vars_repo:
     runs-on: ubuntu-latest
     steps:
-      name: Show the target region
-      run: echo "Deploying to ${{ var.DEPLOY_REGION }}"
+      - name: Show the target region
+        run: echo "Deploying to ${{ vars.DEPLOY_REGION }}"
