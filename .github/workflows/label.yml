@@ -1,0 +1,16 @@
+name: Build Label
+
+on:
+  push:
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Print build-NUMBER-BRANCH
+        run: |
+          echo "${{ format('build-{0}-{1}', github.run_number, github.ref_name) }}"        
